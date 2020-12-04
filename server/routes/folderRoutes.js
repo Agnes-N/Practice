@@ -13,9 +13,9 @@ const multerValidation = async(req, res, next) => {
 
     multerUploads(req, res, (err) => {
         if (err) {
-            // console.log('error', err)
+            console.log('error', err)
         }
-        // console.log('here======', req.file);
+        console.log('here======', req.file, req.body);
         next();
     });
 }

@@ -7,11 +7,12 @@ class FilesController {
             const file = req.file.filename;
             const { id } = req.user;
             const { folderId } = req.params;
+            console.log('===============', req.params);
             const uploadedFile = await fileHelper.CreateFile({
                 file,
                 userId: id
             });
-
+            console.log('===============', uploadedFile);
             const findFolder = await FolderHelper.findFolder("id", folderId)
             const a = findFolder.filesId;
 
